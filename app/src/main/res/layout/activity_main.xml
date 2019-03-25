@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/holo_green_dark">
 
     <LinearLayout
         android:id="@+id/grid_click"
@@ -15,19 +16,21 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:clickable="true"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/holo_blue_dark">
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp">
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/grid"
+            android:padding="8dp"
+            android:tint="@color/colorPrimary"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Grid View Example"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
             android:paddingLeft="16dp"/>
     </LinearLayout>
 
@@ -36,21 +39,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:clickable="true"
         android:gravity="center_vertical"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/holo_blue_dark">
+        android:clickable="true"
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp">
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/list"
+            android:padding="8dp"
+            android:tint="@color/colorPrimary"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List View Example"
+            android:text="Grid View Example"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recycler_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp">
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/list"
+            android:padding="8dp"
+            android:tint="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grid View Example"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
             android:paddingLeft="16dp"/>
     </LinearLayout>
 

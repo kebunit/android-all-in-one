@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.qrcode.QrGeneratorActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
                 android:id="@+id/input_something"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input something"
+                android:hint="Input Content"
                 android:paddingTop="16dp"
                 android:inputType="text"
                 android:textColorHint="@android:color/background_dark"
@@ -61,6 +62,7 @@
                 <ProgressBar
                     android:layout_width="80dp"
                     android:layout_height="80dp"
+                    android:indeterminateTint="#08BEA0"
                     android:indeterminate="true"/>
             </LinearLayout>
             <Button

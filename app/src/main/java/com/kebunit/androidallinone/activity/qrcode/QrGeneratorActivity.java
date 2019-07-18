@@ -1,5 +1,6 @@
 package com.kebunit.androidallinone.activity.qrcode;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -10,12 +11,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.kebunit.androidallinone.R;
 import com.kebunit.androidallinone.helper.QRCodeGenerator;
+import com.kebunit.androidallinone.helper.SystemHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,7 +39,7 @@ public class QrGeneratorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_generator);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Generate QR Code");
+        getSupportActionBar().setTitle("QR Code Generator");
 
         generateQr = findViewById(R.id.generate_button);
         inputSomething = findViewById(R.id.input_something);
@@ -80,6 +83,7 @@ public class QrGeneratorActivity extends AppCompatActivity {
     }
 
     private void generateQr() {
+        SystemHelper.hideKeyboard(this);
         if (TextUtils.isEmpty(inputSomething.getText().toString().trim())) {
             textLayout.setErrorEnabled(true);
             textLayout.setError("Field ini tidak boleh kosong");
@@ -91,8 +95,7 @@ public class QrGeneratorActivity extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    QRCodeGenerator qrCodeGenerator = new QRCodeGenerator(QrGeneratorActivity.this);
-                    bitmap = qrCodeGenerator.createQR(inputSomething.getText().toString(), 512, 512);
+                    bitmap = QRCodeGenerator.generate(inputSomething.getText().toString(), 512, 512);
                     qrImage.post(new Runnable() {
                         @Override
                         public void run() {

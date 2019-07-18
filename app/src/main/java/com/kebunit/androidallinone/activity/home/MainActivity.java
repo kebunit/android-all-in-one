@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new MainItem("Recycler View", toBmp(R.drawable.grid), "recyclerview.RecyclerViewActivity"));
         items.add(new MainItem("Horizontal Scroll", toBmp(R.drawable.list), "horizontalscroll.HorizontalScrollActivity"));
         items.add(new MainItem("Popup View", toBmp(R.drawable.list), "popup.PopupActivity"));
-        items.add(new MainItem("Generate QR Code", toBmp(R.drawable.list), "qrcode.QrGeneratorActivity"));
+        items.add(new MainItem("QR Code Generator ", toBmp(R.drawable.list), "qrcode.QrGeneratorActivity"));
     }
 
 

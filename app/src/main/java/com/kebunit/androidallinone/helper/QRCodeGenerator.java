@@ -1,29 +1,20 @@
 package com.kebunit.androidallinone.helper;
 
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.kebunit.androidallinone.R;
 
 
 public class QRCodeGenerator {
-    private QRCodeWriter writer;
-    private Bitmap bitmap;
-    private Context context;
 
-    public QRCodeGenerator(Context context) {
-        this.context = context;
-        this.writer = new QRCodeWriter();
-    }
-
-    public Bitmap createQR(String contents, int width, int height) {
+    public static Bitmap generate(String contents, int width, int height) {
+        Bitmap bitmap = null;
         try {
+            QRCodeWriter writer = new QRCodeWriter();
             BitMatrix bitMatrix = writer.encode(contents, BarcodeFormat.QR_CODE, width, height);
             int widthQR = bitMatrix.getWidth();
             int heightQR = bitMatrix.getHeight();

@@ -1,47 +1,108 @@
 package com.kebunit.androidallinone;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.sax.TextElementListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.kebunit.androidallinone.gridview.GridViewActivity;
-import com.kebunit.androidallinone.listview.ListViewActivity;
-import com.kebunit.androidallinone.recyclerview.RecyclerViewActivity;
+import com.kebunit.androidallinone.activity.gridview.GridViewActivity;
+import com.kebunit.androidallinone.activity.listview.ListViewActivity;
+import com.kebunit.androidallinone.activity.recyclerview.RecyclerViewActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private LinearLayout gridClick, listClick, recyclerClick;
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+    private ArrayList<MainItem> items;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gridClick = (LinearLayout)findViewById(R.id.grid_click);
-        gridClick.setOnClickListener(this);
-
-        listClick = (LinearLayout)findViewById(R.id.list_click);
-        listClick.setOnClickListener(this);
-
-        recyclerClick = (LinearLayout)findViewById(R.id.recycler_click);
-        recyclerClick.setOnClickListener(this);
+        LinearLayout container = (LinearLayout)findViewById(R.id.container);
+        setItems();
+        setView(container);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.recycler_click :
-                Intent intent = new Intent(this, RecyclerViewActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.list_click :
-                intent = new Intent(this, ListViewActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.grid_click :
-                intent = new Intent(this, GridViewActivity.class);
-                startActivity(intent);
-                break;
+    private Bitmap toBmp(int resource) {
+        return BitmapFactory.decodeResource(getResources(), resource);
+    }
+
+    private void setItems() {
+        items = new ArrayList<>();
+        items.add(new MainItem("Grid View", toBmp(R.drawable.grid), "gridview.GridViewActivity"));
+        items.add(new MainItem("List View", toBmp(R.drawable.list), "listview.ListViewActivity"));
+        items.add(new MainItem("Recycler View", toBmp(R.drawable.grid), "recyclerview.RecyclerViewActivity"));
+        items.add(new MainItem("Horizontal Scroll", toBmp(R.drawable.list), "horizontalscroll.HorizontalScrollActivity"));
+    }
+
+
+    private void setView(LinearLayout container) {
+        container.removeAllViews();
+        for (int i=0; i<items.size(); i++) {
+            View child = getLayoutInflater().inflate(R.layout.item_main, null);
+            ImageView icon = (ImageView)child.findViewById(R.id.image);
+            TextView title = (TextView)child.findViewById(R.id.title);
+            LinearLayout itemClick = (LinearLayout)child.findViewById(R.id.item_click);
+
+            icon.setImageBitmap(items.get(i).getIcon());
+            title.setText(items.get(i).getTitle());
+
+            final String className = items.get(i).getActivitiyName();
+            itemClick.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Intent intent = new Intent(MainActivity.this, Class.forName(className));
+                        startActivity(intent);
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            container.addView(child);
+        }
+    }
+
+    private class MainItem {
+        private String title;
+        private Bitmap icon;
+        private String activitiyName;
+
+        public MainItem(String title, Bitmap icon, String activitiyName) {
+            this.title = title;
+            this.icon = icon;
+            this.activitiyName = activitiyName;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public Bitmap getIcon() {
+            return icon;
+        }
+
+        public void setIcon(Bitmap icon) {
+            this.icon = icon;
+        }
+
+        public String getActivitiyName() {
+            return "com.kebunit.androidallinone.activity." + activitiyName;
+        }
+
+        public void setActivitiyName(String activitiyName) {
+            this.activitiyName = activitiyName;
         }
     }
 }

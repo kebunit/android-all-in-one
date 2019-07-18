@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.item;
+package com.kebunit.androidallinone.model;
 
 public class Icon {
     private int icon;

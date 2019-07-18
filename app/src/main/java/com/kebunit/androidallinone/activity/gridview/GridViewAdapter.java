@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.gridview;
+package com.kebunit.androidallinone.activity.gridview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
 import java.util.ArrayList;
 

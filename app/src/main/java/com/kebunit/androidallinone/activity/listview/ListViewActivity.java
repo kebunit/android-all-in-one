@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.listview;
+package com.kebunit.androidallinone.activity.listview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

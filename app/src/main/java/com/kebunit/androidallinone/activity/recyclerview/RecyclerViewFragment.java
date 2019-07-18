@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.recyclerview;
+package com.kebunit.androidallinone.activity.recyclerview;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
 import java.util.ArrayList;
 
-class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Icon> icons;
     @Nullable

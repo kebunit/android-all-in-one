@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.listview;
+package com.kebunit.androidallinone.activity.listview;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,15 +7,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
 import java.util.ArrayList;
 
-class ListViewFragment extends Fragment {
+public class ListViewFragment extends Fragment {
     private ArrayList<Icon> icons;
     private ListView listView;
     @Nullable

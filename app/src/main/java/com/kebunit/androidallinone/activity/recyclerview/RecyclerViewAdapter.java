@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.recyclerview;
+package com.kebunit.androidallinone.activity.recyclerview;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,5 @@
-package com.kebunit.androidallinone.gridview;
+package com.kebunit.androidallinone.activity.gridview;
 
-import android.accessibilityservice.AccessibilityService;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
 import java.util.ArrayList;
 
-class GridViewFragment extends Fragment {
+public class GridViewFragment extends Fragment {
     private GridView gridView;
     private ArrayList<Icon> icons;
     @Nullable

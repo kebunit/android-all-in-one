@@ -1,4 +1,4 @@
-package com.kebunit.androidallinone.listview;
+package com.kebunit.androidallinone.activity.listview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,12 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.item.Icon;
+import com.kebunit.androidallinone.model.Icon;
 
-import java.nio.InvalidMarkException;
 import java.util.ArrayList;
-
-import dalvik.system.InMemoryDexClassLoader;
 
 public class ListViewAdapter extends BaseAdapter {
     private Context context;

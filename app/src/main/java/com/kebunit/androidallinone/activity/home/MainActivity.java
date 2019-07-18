@@ -1,9 +1,8 @@
-package com.kebunit.androidallinone;
+package com.kebunit.androidallinone.activity.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.sax.TextElementListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.kebunit.androidallinone.activity.gridview.GridViewActivity;
-import com.kebunit.androidallinone.activity.listview.ListViewActivity;
-import com.kebunit.androidallinone.activity.recyclerview.RecyclerViewActivity;
+import com.kebunit.androidallinone.R;
 
 import java.util.ArrayList;
 
@@ -41,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new MainItem("Recycler View", toBmp(R.drawable.grid), "recyclerview.RecyclerViewActivity"));
         items.add(new MainItem("Horizontal Scroll", toBmp(R.drawable.list), "horizontalscroll.HorizontalScrollActivity"));
         items.add(new MainItem("Popup View", toBmp(R.drawable.list), "popup.PopupActivity"));
+        items.add(new MainItem("Generate QR Code", toBmp(R.drawable.list), "qrcode.QrGeneratorActivity"));
     }
 
 

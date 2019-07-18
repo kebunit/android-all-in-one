@@ -4,18 +4,21 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.basiclayout.BasicLayoutActivity"></activity>
+        <activity android:name=".activity.qrcode.QrGeneratorActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.basiclayout.BasicLayoutActivity" />
         <activity android:name=".activity.popup.PopupActivity" />
         <activity android:name=".activity.horizontalscroll.HorizontalScrollActivity" />
         <activity android:name=".activity.recyclerview.RecyclerViewActivity" />
         <activity android:name=".activity.listview.ListViewActivity" />
         <activity android:name=".activity.gridview.GridViewActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

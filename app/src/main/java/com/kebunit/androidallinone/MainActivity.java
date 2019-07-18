@@ -35,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void setItems() {
         items = new ArrayList<>();
+        items.add(new MainItem("Basic Layout", toBmp(R.drawable.grid), "basiclayout.BasicLayoutActivity"));
         items.add(new MainItem("Grid View", toBmp(R.drawable.grid), "gridview.GridViewActivity"));
         items.add(new MainItem("List View", toBmp(R.drawable.list), "listview.ListViewActivity"));
         items.add(new MainItem("Recycler View", toBmp(R.drawable.grid), "recyclerview.RecyclerViewActivity"));
         items.add(new MainItem("Horizontal Scroll", toBmp(R.drawable.list), "horizontalscroll.HorizontalScrollActivity"));
+        items.add(new MainItem("Popup View", toBmp(R.drawable.list), "popup.PopupActivity"));
     }
 
 

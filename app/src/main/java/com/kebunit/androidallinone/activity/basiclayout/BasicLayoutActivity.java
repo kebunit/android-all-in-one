@@ -1,22 +1,20 @@
-package com.kebunit.androidallinone.activity.listview;
+package com.kebunit.androidallinone.activity.basiclayout;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.kebunit.androidallinone.R;
 
-public class ListViewActivity extends AppCompatActivity {
+public class BasicLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_container);
+        setContentView(R.layout.activity_basic_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("List View");
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.activity_container, new ListViewFragment())
-                .commit();
+        getSupportActionBar().setTitle("Basic Layout");
     }
 
     @Override

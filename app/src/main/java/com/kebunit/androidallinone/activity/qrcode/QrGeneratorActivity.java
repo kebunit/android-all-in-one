@@ -1,9 +1,6 @@
 package com.kebunit.androidallinone.activity.qrcode;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +8,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.helper.QRCodeGenerator;
+import com.kebunit.androidallinone.helper.ImageHelper;
+import com.kebunit.androidallinone.helper.QRGenerator;
 import com.kebunit.androidallinone.helper.SystemHelper;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -63,18 +58,9 @@ public class QrGeneratorActivity extends AppCompatActivity {
                     Calendar calendar = Calendar.getInstance();
                     SimpleDateFormat jam = new SimpleDateFormat("HH.mm.ss");
                     SimpleDateFormat tanggal = new SimpleDateFormat("dd-MM-yyyy");
-                    String name = "QR-generator"+ tanggal.format(calendar.getTime()) +" at " + jam.format(calendar.getTime()) +".png";
-                    File file = new File(getApplication().getExternalCacheDir(),name);
-                    FileOutputStream fOut = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
-                    fOut.flush();
-                    fOut.close();
-                    file.setReadable(true, false);
-                    Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-                    intent.setType("image/png");
-                    startActivity(Intent.createChooser(intent, "Share image via"));
+                    final String name = "QR-generator"+ tanggal.format(calendar.getTime()) +" at " + jam.format(calendar.getTime()) +".png";
+
+                    ImageHelper.share(QrGeneratorActivity.this, bitmap, name);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -95,7 +81,7 @@ public class QrGeneratorActivity extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    bitmap = QRCodeGenerator.generate(inputSomething.getText().toString(), 512, 512);
+                    bitmap = QRGenerator.generate(inputSomething.getText().toString(), 512, 512);
                     qrImage.post(new Runnable() {
                         @Override
                         public void run() {

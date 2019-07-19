@@ -8,8 +8,12 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+/**
+ * @author Sabituddin Bigbang
+ * @since 2019
+ */
 
-public class QRCodeGenerator {
+public class QRGenerator {
 
     public static Bitmap generate(String contents, int width, int height) {
         Bitmap bitmap = null;

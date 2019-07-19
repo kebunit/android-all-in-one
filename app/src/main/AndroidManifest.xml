@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.qrcode.QrGeneratorActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.qrcode.QrGeneratorActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.basiclayout.BasicLayoutActivity" />
         <activity android:name=".activity.popup.PopupActivity" />
         <activity android:name=".activity.horizontalscroll.HorizontalScrollActivity" />

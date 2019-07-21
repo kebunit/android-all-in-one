@@ -10,8 +10,17 @@
         android:roundIcon="@drawable/logo_apps"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.viewpager.ViewPagerActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.splashscreen.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.viewpager.ViewPagerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.qrcode.QrGeneratorActivity"
             android:screenOrientation="portrait" />
@@ -21,13 +30,7 @@
         <activity android:name=".activity.recyclerview.RecyclerViewActivity" />
         <activity android:name=".activity.listview.ListViewActivity" />
         <activity android:name=".activity.gridview.GridViewActivity" />
-        <activity android:name=".activity.home.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.home.MainActivity"/>
     </application>
 
 </manifest>

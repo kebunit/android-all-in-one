@@ -8,3 +8,4 @@
 - Horizontal Scroll
 - Popup View
 - QR Code Generator
+- View Pager

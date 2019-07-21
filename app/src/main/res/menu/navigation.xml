@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/basic_layout"
+        android:icon="@drawable/icon"
+        android:title="Basic" />
+
+    <item
+        android:id="@+id/grid_view"
+        android:icon="@drawable/icon"
+        android:title="Grid" />
+
+    <item
+        android:id="@+id/list_view"
+        android:icon="@drawable/icon"
+        android:title="List" />
+</menu>

@@ -30,17 +30,17 @@ public class ListViewFragment extends Fragment {
 
     private void setItemList() {
         icons = new ArrayList<>();
-        icons.add(new Icon(R.drawable.icon, "Motorcycle", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Computer", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Car", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Bicycle", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Home", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Life", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Room", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Mountain", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Sea", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Beach", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Building", "Modern transportation lorem ipsum isr amet"));
-        icons.add(new Icon(R.drawable.icon, "Road", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Motorcycle", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Computer", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Car", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Bicycle", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Home", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Life", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Room", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Mountain", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Sea", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Beach", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Building", "Modern transportation lorem ipsum isr amet"));
+        icons.add(new Icon(R.drawable.image_item, "Road", "Modern transportation lorem ipsum isr amet"));
     }
 }

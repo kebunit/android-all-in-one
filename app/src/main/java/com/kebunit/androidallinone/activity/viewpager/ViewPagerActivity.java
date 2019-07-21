@@ -1,22 +1,21 @@
-package com.kebunit.androidallinone.activity.basiclayout;
+package com.kebunit.androidallinone.activity.viewpager;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.kebunit.androidallinone.R;
 
-public class BasicLayoutActivity extends AppCompatActivity {
+public class ViewPagerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Basic Layout");
+        getSupportActionBar().setTitle("View Pager");
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.activity_container, new BasicLayoutFragment())
+                .add(R.id.activity_container, new ViewPagerFragment())
                 .commit();
     }
 

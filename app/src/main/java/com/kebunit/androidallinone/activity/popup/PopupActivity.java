@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.kebunit.androidallinone.R;
-import com.kebunit.androidallinone.helper.PopupView;
+import com.kebunit.androidallinone.customview.PopupView;
 
 public class PopupActivity extends AppCompatActivity {
     private CardView dialodButton;

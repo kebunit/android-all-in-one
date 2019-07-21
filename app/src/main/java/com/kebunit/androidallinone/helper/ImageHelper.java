@@ -28,23 +28,18 @@ public class ImageHelper {
      * @param bitmap
      * @param name
      */
-    public static void share(Context context, final Bitmap bitmap, final String name) {
-        final Activity activity = (Activity)context;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    file = new File(activity.getApplication().getExternalCacheDir(), name);
-                    FileOutputStream fOut = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
-                    fOut.flush();
-                    fOut.close();
-                    file.setReadable(true, false);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+    public static void share(Context context, Bitmap bitmap, String name) {
+        Activity activity = (Activity)context;
+        try {
+            file = new File(activity.getApplication().getExternalCacheDir(), name);
+            FileOutputStream fOut = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+            fOut.flush();
+            fOut.close();
+            file.setReadable(true, false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

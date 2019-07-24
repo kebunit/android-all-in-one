@@ -10,6 +10,7 @@
         android:roundIcon="@drawable/logo_apps"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.currency.FormatNumberActivity"></activity>
         <activity android:name=".activity.splashscreen.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">

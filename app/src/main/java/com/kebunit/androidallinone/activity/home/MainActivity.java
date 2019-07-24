@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new MainItem("Popup View", toBmp(R.drawable.list), "popup.PopupActivity"));
         items.add(new MainItem("QR Code Generator ", toBmp(R.drawable.list), "qrcode.QrGeneratorActivity"));
         items.add(new MainItem("View Pager ", toBmp(R.drawable.list), "viewpager.ViewPagerActivity"));
+        items.add(new MainItem("Currency Format Number", toBmp(R.drawable.list), "currency.FormatNumberActivity"));
     }
 
 

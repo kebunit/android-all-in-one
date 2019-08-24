@@ -4,6 +4,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -18,17 +19,23 @@ public class CountdownTimerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coundown_timer);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Countdown Timer");
 
+        setContentView(R.layout.activity_coundown_timer);
         progressBar = findViewById(R.id.progressBar);
         timerMinute = findViewById(R.id.timer_minute);
         timerSecond = findViewById(R.id.timer_second);
 
-        new CountDownTimer(60000, 1) {
+        setCountdownTimer(60);
+    }
 
+    private void setCountdownTimer(int second) {
+        final int timeInSecond = second*1000;
+        new CountDownTimer(timeInSecond, 1) {
             public void onTick(long millisUntilFinished) {
                 int secondCount = (int)millisUntilFinished / 1000;
-                progressBar.setMax(60000);
+                progressBar.setMax(timeInSecond);
                 progressBar.setProgress((int)millisUntilFinished);
                 int minute = secondCount / 60;
                 int second = secondCount % 60;
@@ -42,5 +49,15 @@ public class CountdownTimerActivity extends AppCompatActivity {
                 timerSecond.setText("Done!");
             }
         }.start();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()== android.R.id.home) {
+            onBackPressed();
+            return true;
+        } else {
+            return false;
+        }
     }
 }

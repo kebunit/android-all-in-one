@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kebunit.androidallinone">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -11,6 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.timercountdown.CountdownTimerActivity"></activity>
+        <activity android:name=".activity.qrcode.ScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
+        <activity android:name=".activity.qrcode.QrScannerActivity" />
+        <activity android:name=".activity.camera.CameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity android:name=".activity.currency.FormatNumberActivity" />
         <activity
             android:name=".activity.splashscreen.SplashScreenActivity"
@@ -35,6 +47,10 @@
         <activity android:name=".activity.listview.ListViewActivity" />
         <activity android:name=".activity.gridview.GridViewActivity" />
         <activity android:name=".activity.home.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
     </application>
 
 </manifest>

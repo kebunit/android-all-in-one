@@ -28,7 +28,7 @@ public class PopupActivity extends AppCompatActivity {
     }
 
     private void showDialog() {
-        View itemView = getLayoutInflater().inflate(R.layout.popup_view, null);
+        View itemView = getLayoutInflater().inflate(R.layout.popup_result, null);
         ImageView closeButton = (ImageView)itemView.findViewById(R.id.close_btn);
 
         final PopupView popupView = new PopupView(this, itemView);

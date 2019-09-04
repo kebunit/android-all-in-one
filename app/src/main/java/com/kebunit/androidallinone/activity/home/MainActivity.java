@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         items.add(new MainItem("Currency Format Number", toBmp(R.drawable.list), "currency.FormatNumberActivity"));
         items.add(new MainItem("Camera", toBmp(R.drawable.list), "camera.CameraActivity"));
         items.add(new MainItem("Timer Countdown", toBmp(R.drawable.list), "timercountdown.CountdownTimerActivity"));
+        items.add(new MainItem("Notification", toBmp(R.drawable.list), "notification.NotificationActivity"));
+        items.add(new MainItem("Search View", toBmp(R.drawable.list), "searchview.SearchViewActivity"));
     }
 
 

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:id="@+id/container_device"
     tools:context=".activity.qrcode.ScannerActivity">
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <SurfaceView
@@ -98,5 +98,5 @@
                     android:src="@drawable/add_from_image"/>
             </LinearLayout>
         </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

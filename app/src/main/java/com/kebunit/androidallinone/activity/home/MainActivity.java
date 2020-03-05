@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new MainItem("Notification", toBmp(R.drawable.list), "notification.NotificationActivity"));
         items.add(new MainItem("Search View", toBmp(R.drawable.list), "searchview.SearchViewActivity"));
         items.add(new MainItem("Slider", toBmp(R.drawable.list), "slider.SliderActivity"));
+        items.add(new MainItem("Loop COntoh", toBmp(R.drawable.list), "loopitem.LoopItemActivity"));
     }
 
 

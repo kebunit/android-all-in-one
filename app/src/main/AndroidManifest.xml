@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/logo_apps"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.slider.SliderActivity"></activity>
+        <activity android:name=".activity.loopitem.LoopItemActivity"></activity>
+        <activity android:name=".activity.slider.SliderActivity" />
         <activity android:name=".activity.searchview.SearchViewActivity" />
 
         <receiver android:name=".activity.notification.NotificationReceiver" />
